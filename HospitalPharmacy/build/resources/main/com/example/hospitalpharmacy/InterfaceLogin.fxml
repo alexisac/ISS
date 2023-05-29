@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalpharmacy.InterfaceLogin">
    <children>
@@ -16,13 +14,12 @@
             <Font name="Georgia Bold" size="36.0" />
          </font>
       </Label>
-      <TextField focusTraversable="false" layoutX="197.0" layoutY="118.0" promptText="enter your personal code">
+      <TextField fx:id="nameText" focusTraversable="false" layoutX="197.0" layoutY="101.0" promptText="Name">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </TextField>
-      <ComboBox focusTraversable="false" layoutX="197.0" layoutY="167.0" prefHeight="33.0" prefWidth="233.0" promptText="choose your job" />
-      <Button focusTraversable="false" layoutX="248.0" layoutY="225.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" text="LOGIN">
+      <Button focusTraversable="false" layoutX="248.0" layoutY="233.0" mnemonicParsing="false" onAction="#Login" prefHeight="33.0" prefWidth="130.0" text="LOGIN">
          <font>
             <Font name="Georgia Bold" size="18.0" />
          </font>
@@ -37,15 +34,25 @@
             <Font name="Georgia" size="18.0" />
          </font>
       </Label>
-      <Hyperlink focusTraversable="false" layoutX="378.0" layoutY="297.0" text="Sign up">
+      <Hyperlink focusTraversable="false" layoutX="378.0" layoutY="297.0" onAction="#registerDoctor" text="Sign up">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Hyperlink>
-      <Hyperlink focusTraversable="false" layoutX="378.0" layoutY="334.0" text="Sign up">
+      <Hyperlink focusTraversable="false" layoutX="378.0" layoutY="334.0" onAction="#registerPharmacist" text="Sign up">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Hyperlink>
+      <TextField fx:id="codeText" focusTraversable="false" layoutX="197.0" layoutY="143.0" promptText="Personal code">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="wardCodeText" focusTraversable="false" layoutX="197.0" layoutY="184.0" promptText="Ward code">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

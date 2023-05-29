@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.hospitalpharmacy.InterfacePharmacy"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="527.0" prefWidth="1114.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalpharmacy.InterfacePharmacy">
+   <children>
+      <Label focusTraversable="false" layoutX="442.0" layoutY="33.0" text="PHARMACY">
+         <font>
+            <Font name="Georgia Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label focusTraversable="false" layoutX="376.0" layoutY="109.0" text="Orders">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Label>
+      <Label focusTraversable="false" layoutX="626.0" layoutY="109.0" text="Required drugs">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="quantityText" editable="true" focusTraversable="false" layoutX="840.0" layoutY="170.0" prefHeight="33.0" prefWidth="262.0" />
+      <Button focusTraversable="false" layoutX="840.0" layoutY="279.0" mnemonicParsing="false" onAction="#addDrug" prefHeight="33.0" prefWidth="262.0" text="Add new drug" textAlignment="CENTER">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <Button focusTraversable="false" layoutX="840.0" layoutY="322.0" mnemonicParsing="false" onAction="#acceptOrder" prefHeight="80.0" prefWidth="123.0" text="Accept order" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <Button focusTraversable="false" layoutX="979.0" layoutY="322.0" mnemonicParsing="false" onAction="#declineOrder" prefHeight="80.0" prefWidth="123.0" text="Decline order" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <Button focusTraversable="false" layoutX="840.0" layoutY="415.0" mnemonicParsing="false" onAction="#logout" prefHeight="33.0" prefWidth="262.0" text="Logout" textAlignment="CENTER">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="ordersTable" editable="true" focusTraversable="false" layoutX="267.0" layoutY="144.0" prefHeight="357.0" prefWidth="272.0">
+         <columns>
+            <TableColumn fx:id="wardColumn" prefWidth="132.0" text="Ward" />
+            <TableColumn fx:id="dateColumn" prefWidth="138.0" text="Date and time" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="orderDrugsTable" editable="true" focusTraversable="false" layoutX="551.0" layoutY="144.0" prefHeight="357.0" prefWidth="272.0">
+         <columns>
+            <TableColumn fx:id="drugNameColumn" prefWidth="183.0" text="Name" />
+            <TableColumn fx:id="drugQuantityColumn" prefWidth="87.0" text="Quantity" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="nameText" layoutX="840.0" layoutY="214.0" prefHeight="33.0" prefWidth="262.0" promptText="Name">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="930.0" layoutY="143.0" text="Quantity">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="drugsTabel" editable="true" focusTraversable="false" layoutX="8.0" layoutY="144.0" prefHeight="357.0" prefWidth="246.0">
+         <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="164.0" text="Name" />
+            <TableColumn fx:id="quantityColumn" text="Quantity" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label focusTraversable="false" layoutX="104.0" layoutY="109.0" text="Drugs">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
